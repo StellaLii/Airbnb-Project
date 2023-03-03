@@ -26,26 +26,26 @@ Members: Guanghua Yang, Jianan Li, Kewei Li, Ningyi Ke, Wenbin Li
 
 *(Part 1 - Descriptive Analysis) - Freya*
  
-1. Which areas and room types are more popular?
+- Which areas and room types are more popular?
     - Map heatmap: room rates, availability
     - Room type vs popularity mapping
 
-2. What is the distribution of prices in different regions and room types?
+- What is the distribution of prices in different regions and room types?
 
      - Distribution subplot of prices
 
 
 *(Part 2 - Research Questions) - Kelvin*
 
-1. Are there any Airbnb renters who are always writing bad reviews? (done)
+- Are there any Airbnb renters who are always writing bad reviews? (done)
 
     - Using detailed review data to do sentiment analysis
 
-2. Optional: Comparison of the ratio of positive/bad reviews in different regions
+- Optional: Comparison of the ratio of positive/bad reviews in different regions
 
-3. Optional: What is the growth rate of Airbnb hosts in the past 4 quarters?
+- Optional: What is the growth rate of Airbnb hosts in the past 4 quarters?
 
-4. The language usage distribution of airbnb users? (done)
+- The language usage distribution of airbnb users? (done)
 
 <br><br>
 
