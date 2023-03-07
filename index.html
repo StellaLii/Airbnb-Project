@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Airbnb Rental Price Anlysis and Prediction</title>
+</head>
+
+<body>
+  <nav class="navbar fixed-top bg-body-tertiary">
+    <div id="nav-top" class="container-fluid">
+      <div class="logo">
+        <img src="./img/logo1.png" alt="logo">
+        <span class="section-title">CMPT733-Project</span>
+      </div>
+
+      <ul class="menu">
+        <li><a href="#section1">Section 1</a></li>
+        <li><a href="#section2">Section 2</a></li>
+        <li><a href="#section3">Section 3</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="section1">
+    <div class="container-xxl">
+      <div class="row justify-content-center">
+
+        <div class="col-md-4">
+          <img src="./img/2.jpg" alt="Image" class="img-fluid"
+            style="border-radius: 10px; margin: 0.8rem 0rem 0.3rem 0rem;">
+        </div>
+
+        <div class="col-md-8">
+          <div class="container-fluid" style="border-radius: 10px; margin: 0.8rem 0rem 0.8rem 0rem; color:#5b5b5b">
+            <h2 style="font-weight: 53px;">House Info & Price Prediction</h2>
+
+            <form id="form">
+              <div class="form-group row pb-3" style="margin-top: 1rem;">
+                <label for="input1" class="col-sm-2 col-form-label" >Address:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="address" placeholder="Enter your address">
+                </div>
+              </div>
+
+              <div class="form-group row pb-3">
+                <label for="input1" class="col-sm-2 col-form-label">No. Bedrooms:</label>
+                <div class="col-sm-10">
+                  <select class="form-control" id="bedrooms">
+                    <option value="">Bedrooms</option>
+                    <option value="0">0 Bedrooms</option>
+                    <option value="1">1 Bedrooms</option>
+                    <option value="2">2 Bedrooms</option>
+                    <option value="3">3 Bedrooms</option>
+                    <option value="4">4 Bedrooms</option>
+                    <option value="5">5 Bedrooms</option>
+                  </select>
+                </div>
+              </div>
+
+
+              <div class="form-group row pb-3">
+                <label for="input1" class="col-sm-2 col-form-label">No. Bathrooms:</label>
+                <div class="col-sm-10">
+                  <select class="form-control" id="bathrooms">
+                    <option value="">Bathrooms</option>
+                    <option value="0">0 Bathrooms</option>
+                    <option value="1">1 Bathrooms</option>
+                    <option value="2">2 Bathrooms</option>
+                    <option value="3">3 Bathrooms</option>
+                    <option value="4">4 Bathrooms</option>
+                    <option value="5">5 Bathrooms</option>
+                  </select>
+                </div>
+              </div>
+
+
+              <div class="container-fluid text-center row">
+                <div class="row no-gutters">
+                  <div class="col g-0 text-start">
+                    <p>Kitchen:</p>
+                  </div>
+                  <div class="col">
+                    <div class="form-check form-check-inline checkbox-lg">
+                      <input class="form-check-input" type="checkbox" id="Refrigerator" value="option1" />
+                      <label class="form-check-label" for="inlineCheckbox1">Refrigerator</label>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-check form-check-inline checkbox-lg">
+                      <input class="form-check-input" type="checkbox" id="Stove" value="option1" />
+                      <label class="form-check-label" for="inlineCheckbox1">Stove</label>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-check form-check-inline checkbox-lg">
+                      <input class="form-check-input" type="checkbox" id="Microwave" value="option1" />
+                      <label class="form-check-label" for="inlineCheckbox1">Microwave</label>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-check form-check-inline checkbox-lg">
+                      <input class="form-check-input" type="checkbox" id="Dishwasher" value="option1" />
+                      <label class="form-check-label" for="inlineCheckbox1">Dishwasher</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="container-fluid text-center row">
+                <div class="row no-gutters">
+                  <div class="col g-0 text-start">
+                    <p>Electrical Appliance:</p>
+                  </div>
+                  <div class="col text-start">
+                    <div class="form-check form-check-inline checkbox-lg">
+                      <input class="form-check-input" type="checkbox" id="Heating" value="option1" />
+                      <label class="form-check-label" for="inlineCheckbox1">Heating</label>
+                    </div>
+                  </div>
+                  <div class="col text-start">
+                    <div class="form-check form-check-inline checkbox-lg">
+                      <input class="form-check-input" type="checkbox" id="Air-Conditioning" value="option1" />
+                      <label class="form-check-label" for="inlineCheckbox1">Air Conditioning</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="container-fluid text-center row">
+                <div class="row no-gutters">
+                  <div class="col g-0 text-start">
+                    <p>Others:</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid text-center row">
+                <div class="row no-gutters">
+                  <div class="col text-start">
+                    <div class="form-check form-check-inline checkbox-lg">
+                      <input class="form-check-input" type="checkbox" id="Parking" value="option1" />
+                      <label class="form-check-label" for="inlineCheckbox1">Parking</label>
+                    </div>
+                  </div>
+                  <div class="col text-start">
+                    <div class="form-check form-check-inline checkbox-lg">
+                      <input class="form-check-input" type="checkbox" id="Network" value="option1" />
+                      <label class="form-check-label" for="inlineCheckbox1">Network</label>
+                    </div>
+                  </div>
+                  <div class="col text-start">
+                    <div class="form-check form-check-inline checkbox-lg">
+                      <input class="form-check-input" type="checkbox" id="Hair-dryer" value="option1" />
+                      <label class="form-check-label" for="inlineCheckbox1">Hair Dryer</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container-fluid text-center row">
+                <div class="row no-gutters">
+                  <div class="col text-start">
+                    <div class="form-check form-check-inline checkbox-lg">
+                      <input class="form-check-input" type="checkbox" id="Washer" value="option1" />
+                      <label class="form-check-label" for="inlineCheckbox1">Washer</label>
+                    </div>
+                  </div>
+                  <div class="col text-start">
+                    <div class="form-check form-check-inline checkbox-lg">
+                      <input class="form-check-input" type="checkbox" id="Dryer" value="option1" />
+                      <label class="form-check-label" for="inlineCheckbox1">Dryer</label>
+                    </div>
+                  </div>
+                  <div class="col text-start">
+                    <div class="form-check form-check-inline checkbox-lg">
+                      <input class="form-check-input" type="checkbox" id="TV" value="option1" />
+                      <label class="form-check-label" for="inlineCheckbox1">TV</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="form-group text-center">
+                <div class="d-grid gap-2 col-3 mx-auto">
+                  <button class="btn btn-primary" type="button" id="submit">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+      <hr>
+      <div id="result-box">
+        <h3 style="color:#5b5b5b">Result Data</h3>
+        <p id="status-text">State</p>
+        <p id="result-text">Data</p>
+      </div>
+    </div>
+
+  </section>
+  <section id="section2">
+    <h2>Section 2</h2>
+    <p>This is the second section of the web application.</p>
+  </section>
+  <section id="section3">
+    <h2>Section 3</h2>
+    <p>This is the third section of the web application.</p>
+  </section>
+
+
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
