@@ -34,6 +34,10 @@ Members: Guanghua Yang, Jianan Li, Kewei Li, Ningyi Ke, Wenbin Li
 
      - Distribution subplot of prices
 
+- Is public transit needed to be considered for popular areas?
+     - Analyze geographical distribution of Airbnb in popular regions
+     - Distribution of transits that largely affect Airbnb in popular regions 
+
 
 *(Part 2 - Research Questions) - Kelvin*
 
