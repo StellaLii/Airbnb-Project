@@ -73,21 +73,6 @@ def find_average_nearest_price(coords, idx, test = True, k=2):
         average_price = nearest_rows['price'].mean()
     return average_price
 
-# def sendsqs(message):
-#     session = boto3.Session(
-#             aws_access_key_id="AKIAWLQJEAVWEQLEMYEJ",
-#             aws_secret_access_key="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",
-#             region_name='us-west-2'
-#         )
-#     sqs = session.client('sqs')
-#     queue_url = 'https://sqs.us-west-2.amazonaws.com/437032060268/sqs-fifo.fifo'
-#     response = sqs.send_message(
-#         QueueUrl=queue_url,
-#         MessageBody=str(message),
-#         MessageGroupId='message_group_1',
-#         MessageDeduplicationId=str(uuid.uuid4())
-#     )
-
 def handler(mylist, bool_flag):
     # Extract information from the event object
     # mystring = [49.2836,5,0,2,1.0,1.0,0.0,1.0,1.0,2,1.0,0,1,776000.0,-123.13254]
