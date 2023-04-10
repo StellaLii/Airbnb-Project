@@ -75,8 +75,6 @@ def find_average_nearest_price(coords, idx, test = True, k=2):
 
 def handler(mylist, bool_flag):
     # Extract information from the event object
-    # mystring = [49.2836,5,0,2,1.0,1.0,0.0,1.0,1.0,2,1.0,0,1,776000.0,-123.13254]
-    # mystring = event['X-input']
     if not bool_flag:
         with open('rf01.sav', 'rb') as f:
             model = pickle.load(f)
@@ -105,12 +103,12 @@ if __name__ == "__main__":
 
 
     session = boto3.Session(
-            aws_access_key_id="AKIAWLQJEAVWEQLEMYEJ",
-            aws_secret_access_key="UHAFFPWz7Q4t+5eaQhGdQye4qNbCHCbg+KQqsVHW",
-            region_name='us-west-2'
+            aws_access_key_id="your key id",
+            aws_secret_access_key="your access key",
+            region_name='region'
         )
     sqs = session.client('sqs')
-    queue_url = 'https://sqs.us-west-2.amazonaws.com/437032060268/756-fifo.fifo'
+    queue_url = 'fifo sender url'
 
     response = sqs.receive_message(
                 QueueUrl=queue_url,
@@ -149,7 +147,7 @@ if __name__ == "__main__":
         ftr_warn = feature_extrapolation_warning(arr)
         res_lst = [result, prc_warn, ftr_warn]
         response = sqs.send_message(
-                    QueueUrl='https://sqs.us-west-2.amazonaws.com/437032060268/733-receiver.fifo',
+                    QueueUrl='fifo receiver url',
                     MessageBody=str(res_lst),
                     MessageGroupId='message_group_2',
                     MessageDeduplicationId=str(uuid.uuid4())
