@@ -1,6 +1,6 @@
 # CMPT733-Airbnb-Project
 
-> Tentative Project Title: 
+> Project Title: 
 > Insights for New Airbnb Hosts: A Data-Driven Analysis of Vancouver's Airbnb Dataset with BC Assessment, Cultural Spaces and Translink Datasets
 
 
