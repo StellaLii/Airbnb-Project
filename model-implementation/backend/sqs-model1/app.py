@@ -46,6 +46,27 @@ def insert_into_index(row):
     idx.insert(row.name, coord)
 
 
+def find_average_nearest_price_rental(coords, idx, test = True, k=5):
+    lat, lon = coords
+    search_radius = 0.001
+    nearest = []
+    it = 0
+    while len(nearest) < k and it < 5:
+        bounds = (lon - search_radius, lat - search_radius, lon + search_radius, lat + search_radius)
+        nearest = list(idx.intersection(bounds))
+        search_radius *= 2
+        it+=1
+    # print(nearest)
+
+    nearest_distances = [haversine(coords, (df.loc[i]['latitude'], df.loc[i]['longitude'])) for i in nearest]
+    nearest_rows = df.loc[nearest].copy()
+    nearest_rows['distance'] = nearest_distances
+    nearest_rows.sort_values(by='distance', inplace=True)
+    nearest_rows = nearest_rows.head(k)
+    average_price = nearest_rows['price'].mean()
+    return average_price
+
+
 def find_average_nearest_price(coords, idx, test = True, k=2):
     lat, lon = coords
     search_radius = 0.001
@@ -100,6 +121,10 @@ if __name__ == "__main__":
     idx = rtree.index.Index()
 
     df.apply(insert_into_index, axis=1)
+    
+    rental = pd.read_csv("craiglist.csv",encoding='cp1252')
+    rental['price'] = rental['price'].str.replace(',','').astype(float)
+    rental = rental.dropna()
 
 
     session = boto3.Session(
@@ -128,6 +153,10 @@ if __name__ == "__main__":
 
 
         avg_price_8 = find_average_nearest_price((latitude, longitude), idx, True, 8)
+        df = rental
+        idx2 = rtree.index.Index()
+        df.apply(insert_into_index, axis=1)
+        avg_rental = find_average_nearest_price_rental((latitude, longitude), idx2)
 
 
         if avg_price_8 is np.nan:
@@ -145,7 +174,7 @@ if __name__ == "__main__":
         arr = [message_lst[3],message_lst[4],message_lst[5],message_lst[10]]
         prc_warn = price_prediction_warning(float(result))
         ftr_warn = feature_extrapolation_warning(arr)
-        res_lst = [result, prc_warn, ftr_warn]
+        res_lst = [result, prc_warn, ftr_warn, avg_rental]
         response = sqs.send_message(
                     QueueUrl='fifo receiver url',
                     MessageBody=str(res_lst),
