@@ -17,6 +17,7 @@ The sharing economy has experienced significant growth in recent years, with pla
 | Postal Code Conversion File  | https://abacus.library.ubc.ca/dataset.xhtml?persistentId=hdl:11272.1/AB2/KBP0AM |
 | Vancouver Cultural Spaces  | https://opendata.vancouver.ca/explore/dataset/cultural-spaces/export/?disjunctive.type&disjunctive.primary_use&disjunctive.ownership |
 | GTFS Static Data (Translink)  | https://www.translink.ca/about-us/doing-business-with-translink/app-developer-resources/gtfs/gtfs-data |
+| Craigslist Rental Data | Crawled|
 
 ## Data Science Pipline
 ![pipeline](Picture/Pipeline.jpg)
