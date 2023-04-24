@@ -1,7 +1,7 @@
 # CMPT733-Airbnb-Project
 
 > Project Title: 
-> Insights for New Airbnb Hosts: A Data-Driven Analysis of Vancouver's Airbnb Dataset with BC Assessment, Cultural Spaces and Translink Datasets
+> A Data-Driven Analysis of Vancouver's Rental and Airbnb Properties with BC Assessment, Vancouver Cultural Spaces, and Translink Datasets
 
 
 Members: Guanghua Yang, Jianan Li, Kewei Li, Ningyi Ke, Wenbin Li
@@ -17,7 +17,7 @@ The sharing economy has experienced significant growth in recent years, with pla
 | Postal Code Conversion File  | https://abacus.library.ubc.ca/dataset.xhtml?persistentId=hdl:11272.1/AB2/KBP0AM |
 | Vancouver Cultural Spaces  | https://opendata.vancouver.ca/explore/dataset/cultural-spaces/export/?disjunctive.type&disjunctive.primary_use&disjunctive.ownership |
 | GTFS Static Data (Translink)  | https://www.translink.ca/about-us/doing-business-with-translink/app-developer-resources/gtfs/gtfs-data |
-| Craigslist Rental Data | Crawled|
+| Craigslist Rental Data | 7,700 rows crawled  |
 
 ## Data Science Pipline
 ![pipeline](Picture/Pipeline.jpg)
@@ -25,7 +25,8 @@ The sharing economy has experienced significant growth in recent years, with pla
 ## Data Product
 ![Product Review](Picture/Product.jpg)
 
-
+## Demo
+![Demo](Picture/demo.gif)
 
 
 
