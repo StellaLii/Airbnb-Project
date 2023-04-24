@@ -1,10 +1,7 @@
-# CMPT733-Airbnb-Project
+# A Data-Driven Analysis of Vancouver's Rental and Airbnb Properties 
+> Utilizing BC Assessment, Vancouver Cultural Spaces, and Translink Datasets
 
-> Project Title: 
-> A Data-Driven Analysis of Vancouver's Rental and Airbnb Properties with BC Assessment, Vancouver Cultural Spaces, and Translink Datasets
-
-
-Members: Guanghua Yang, Jianan Li, Kewei Li, Ningyi Ke, Wenbin Li
+**Members: Guanghua Yang, Jianan Li, Kewei Li, Ningyi Ke, Wenbin Li**
 
 
 ## Introduction
